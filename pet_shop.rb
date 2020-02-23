@@ -7,25 +7,45 @@ def total_cash(sum)
 end
 
 def add_or_remove_cash(shop, cash)
-    return shop[:admin][:total_cash] += cash
+  shop[:admin][:total_cash] += cash
 end
 
-def add_or_remove_cash(shop, cash)
+def add_or_remove_cash(cash, amount)
   shop[:admin][:total_cash] -= cash
 end
 
-def stock_count(count)
-  return count[:pets].length
+def stock_count(pet_count)
+  count[:pets].length
 end
 
 def pets_sold(sold)
   return sold[:admin][:pets_sold]
 end
 
-def customer_cash(cash)
-  return cash[:cash]
+def increase_pets_sold(shop, sold)
+  shop[:admin][:pets_sold] += sold
 end
 
-def add_pet_to_customer(customer, new_pet)
-  customer[:pets].push() new_pet
+def customer_cash(customer)
+  return customer[:cash]
+end
+
+def add_pet_to_customer(stock, new_pet)
+  stock[:pets].push new_pet
+end
+
+def remove_customer_cash(customer, subtract)
+  customer[:cash] -= subtract
+end
+
+def find_pet_by_name(shop, name)
+  shop[:pets].find {|pets| pets[:name] == name}
+end
+
+def remove_pet_by_name(shop, name)
+  shop[:pets].delete {|pets| pets[:name] == name}
+end
+
+def pets_by_breed(shop, breed)
+  shop[:pets].select {|pets| pets[:breed] == breed}
 end

@@ -84,18 +84,20 @@ class TestPetShop < Minitest::Test
   #   name = pet_shop_name(@pet_shop)
   #   assert_equal("Camelot of Pets", name)
   # end
+#COMPLETE
 
   # def test_total_cash
   #   sum = total_cash(@pet_shop)
   #   assert_equal(1000, sum)
   # end
+#COMPLETE
 
-  def test_add_or_remove_cash__add
-    add_or_remove_cash(@pet_shop,10)
-    cash = total_cash(@pet_shop)
-    assert_equal(1010, cash)
-  end
-
+  # def test_add_or_remove_cash__add
+  #   add_or_remove_cash(@pet_shop,10)
+  #   cash = total_cash(@pet_shop)
+  #   assert_equal(1010, cash)
+  # end
+  #
   # def test_add_or_remove_cash__remove
   #   add_or_remove_cash(@pet_shop,-10)
   #   cash = total_cash(@pet_shop)
@@ -106,6 +108,7 @@ class TestPetShop < Minitest::Test
   #   sold = pets_sold(@pet_shop)
   #   assert_equal(0, sold)
   # end
+#COMPLETE
 
   # def test_increase_pets_sold
   #   increase_pets_sold(@pet_shop,2)
@@ -117,16 +120,17 @@ class TestPetShop < Minitest::Test
   #   count = stock_count(@pet_shop)
   #   assert_equal(6, count)
   # end
+#COMPLETE
 
   # def test_all_pets_by_breed__found
   #   pets = pets_by_breed(@pet_shop, "British Shorthair")
   #   assert_equal(2, pets.count)
   # end
 
-  # def test_all_pets_by_breed__not_found
-  #   pets = pets_by_breed(@pet_shop, "Dalmation")
-  #   assert_equal(0, pets.count)
-  # end
+  def test_all_pets_by_breed__not_found
+    pets = pets_by_breed(@pet_shop, "Dalmation")
+    assert_equal(0, pets.count)
+  end
 
   # def test_find_pet_by_name__returns_pet
   #   pet = find_pet_by_name(@pet_shop, "Arthur")
@@ -165,12 +169,12 @@ class TestPetShop < Minitest::Test
   #   count = customer_pet_count(@customers[0])
   #   assert_equal(0, count)
   # end
-
-  # def test_add_pet_to_customer
-  #   customer = @customers[0]
-  #   add_pet_to_customer(customer, @new_pet)
-  #   assert_equal(1, customer_pet_count(customer))
-  # end
+  #
+  def test_add_pet_to_customer
+    customer = @customers[0]
+    add_pet_to_customer(customer, @new_pet)
+    assert_equal(1, customer_pet_count(customer))
+  end
 
   # --- OPTIONAL ---
 
